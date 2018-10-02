@@ -10,11 +10,18 @@ class Query_data:
 
         crawled_data = mini_Crawler.crawl_query_data(self.url)
 
-        print(crawled_data)
+        if(crawled_data):
+            # list[-1] denotes the last index of the list
+            # list returned [scheme,netloc,title,text,meta_keywords]
+            # [-1] is a list of all the keywords
+            print("crawled_data from 2")
+            print(crawled_data[-1])
+            # returns a list of URLs
+            mini_Crawler.request_news_URLs(crawled_data[-1])
+        else:
+            print("Invalid URL")
 
-        print(crawled_data[-1][0])
-
-        mini_Crawler.request_news(crawled_data[-1])
+        
         
 
 
