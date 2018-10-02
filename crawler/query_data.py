@@ -27,7 +27,7 @@ class Query_data:
             return(crawled_data,api_news_data)
         else:
             print("Invalid URL")
-            return None
+            return(None)
 
         
         
