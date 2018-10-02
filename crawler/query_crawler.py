@@ -39,10 +39,6 @@ class Crawler:
         query_string = ""
 
         list_of_URLs =[]
-        print("from1")
-        print(list_of_keywords)
-        print("from1")
-        print(len(list_of_keywords))
 
         for i in range(0,len(list_of_keywords)):
             if(i >= len(list_of_keywords)-1):
@@ -50,20 +46,15 @@ class Crawler:
                 break
             else:
                 query_string = query_string+ list_of_keywords[i] + " AND " 
-        print("from1")
-        print(query_string)
         # returns dictionary on all the news articles documentation -> https://newsapi.org/docs/endpoints/everything
         all_articles = newsapi.get_everything(q=query_string)
         
         # parse for only thr url in the dctionary as the api restricts the content to only 260 characters for free users
         # and append them to the list of urls
-        print(len(all_articles["articles"]))
-        for i in range(0,len(all_articles["articles"])-1) :
+        for i in range(0,len(all_articles["articles"])) :
             list_of_URLs.append(all_articles["articles"][i]["url"])
-            print(i)
             if(len(list_of_URLs)>5):
                 break
-        print(list_of_URLs)
 
         return list_of_URLs
 
