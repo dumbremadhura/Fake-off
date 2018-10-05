@@ -14,7 +14,7 @@ def main():
     # crawled_data_and_api_data[1] gives a 2d list from the api data
     crawled_data_and_api_data = user_query.get_data()
 
-    print(crawled_data_and_api_data[0])
+    print(crawled_data_and_api_data[0][3])
 
 if __name__ == "__main__":
     main()

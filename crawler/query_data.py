@@ -1,11 +1,25 @@
 from crawler.query_crawler import Crawler
 
 class Query_data:
+    '''
+    class Query_data contains aggregated methods from different classes and provides a single method for a particular operation 
+    '''
+
     def __init__(self,url):
+        '''
+        :type url:string
+        :param url: the URL of the website
+        '''
         self.url = url
     
     def get_data(self):
-
+        '''
+        this methods extracts the contents from the given link in the class constructor and uses its keywords
+        to extract urls from the api
+        then it uses those URLs to get content from those URLs
+        this method returns a tuple where at 0 position is the content from the link and at 1 position is the content from
+        related URLs
+        '''
         mini_Crawler = Crawler()
  
         # return a list in the form 
